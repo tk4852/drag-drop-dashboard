@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0000;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide all resize handles by default */
+.grid-stack .ui-resizable-handle {
+  display: none !important;
+}
+
+/* Show only edge handles on hover */
+.grid-stack-item:hover .ui-resizable-n,
+.grid-stack-item:hover .ui-resizable-e,
+.grid-stack-item:hover .ui-resizable-s,
+.grid-stack-item:hover .ui-resizable-w {
+  display: block !important;
+}
